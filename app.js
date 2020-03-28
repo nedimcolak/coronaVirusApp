@@ -27,26 +27,14 @@ const updateUI = function(dataSet){
         alias = dataSet.fields[i].alias;
         value = dataSet.features[0].attributes[`${name}`];
 
-        output += `<li class="collection-item"><div>${alias}<span class="secondary-content">${value}</span></div></li>`
-    }
-
-    dataHolder.innerHTML = output;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.slider');
-    var instances = M.Slider.init(elems, options);
-  });
-
-  var instance = M.Slider.getInstance(elem);
-  instance.start();
-
-/**
-`<div class="card small white col s12 m6">
+        output += `<div class="card white col s12 m12">
         <div class="card-content black-text">
-            <span class="card-title center-align">${alias}</span>
+            <p class="center-align flow-text">${alias}</p>
             <h2 class="center-align">${value}</h2>
         </div>
     </div>
     `
- */
+    }
+
+    dataHolder.innerHTML = output;
+}
